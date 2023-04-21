@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Android Final Project</string>
+    <string name="joke_generator">JOKE GENERATOR</string>
+    <string name="generate_new_joke">Generate New Joke</string>
+    <string name="or_filter_by">FILTER BY</string>
+    <string name="category">Category</string>
+    <string name="word">Word</string>
+    <string name="generate_joke">Generate Joke</string>
+    <string name="favourites">Favourites</string>
+    <string name="click_below_to_get_a_new_joke">(click below to get a new joke!)</string>
+    <string name="save">Save</string>
+    <string name="categories">Categories: Any</string>
+    <string name="programming">Programming</string>
+    <string name="pun">Pun</string>
+    <string name="christmas">Christmas</string>
+    <string name="spooky">Spooky</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="ok">OK</string>
+</resources>
