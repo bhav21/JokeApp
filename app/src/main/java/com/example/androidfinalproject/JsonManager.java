@@ -10,7 +10,7 @@ public class JsonManager {
         try {
             JSONObject jokeJsonObject = new JSONObject(json);
             if (jokeJsonObject.getBoolean("error")) {
-                joke.joke = "Oh no! There are no jokes containing the selected words :(";
+                joke.joke = "Oh no! There are no jokes matching the selected filters :(";
                 joke.category = "None";
             }
             else {

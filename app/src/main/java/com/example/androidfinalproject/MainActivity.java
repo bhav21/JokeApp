@@ -40,6 +40,12 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (savedInstanceState != null) {
+            joke = savedInstanceState.getParcelable("joke");
+            tv_joke.setText(joke.joke);
+        }
+
         tv_joke = findViewById(R.id.jokeText);
         tv_filterCategories = findViewById(R.id.filterCategories);
         tv_filterPhrase = findViewById(R.id.filterPhrase);
@@ -132,8 +138,6 @@ public class MainActivity extends AppCompatActivity implements
         return true;
     }
 
-
-
     @Override
     public void onStringSent(String str) {
         selectedCategories = str;
@@ -170,5 +174,11 @@ public class MainActivity extends AppCompatActivity implements
     public void onPhraseSent(String str) {
         containingPhrase = str;
         tv_filterPhrase.setText(String.format("%s%s", getString(R.string.must_contain), containingPhrase));
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable("joke", joke);
     }
 }

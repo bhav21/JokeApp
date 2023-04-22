@@ -82,8 +82,6 @@ public class SavedJokesActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
-        // MenuItem generateJokeMenu = menu.findItem(R.id.generateJoke);
-        // MenuItem favourites = menu.findItem(R.id.favourites);
         return true;
     }
 
