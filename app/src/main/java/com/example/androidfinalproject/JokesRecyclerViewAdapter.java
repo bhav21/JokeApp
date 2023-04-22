@@ -38,7 +38,7 @@ public class JokesRecyclerViewAdapter
 
     @Override
     public void onBindViewHolder(@NonNull JokesViewHolder holder, int position) {
-        // holder.id.setText(list.get(position).id + 1);
+        //holder.id.setText(list.get(position).id + 1);
         holder.joke.setText(list.get(position).joke);
         holder.category.setText(list.get(position).category);
     }
@@ -49,7 +49,7 @@ public class JokesRecyclerViewAdapter
     }
 
     public class JokesViewHolder extends RecyclerView.ViewHolder {
-        // TextView id;
+        //TextView id;
         TextView joke;
         TextView category;
 
@@ -65,7 +65,6 @@ public class JokesRecyclerViewAdapter
                 }
             });
         }
-
     }
 
 }

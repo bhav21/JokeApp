@@ -19,13 +19,19 @@ public class NetworkingManager {
 
     String jokeURL = "https://v2.jokeapi.dev/joke/";
 
-    public void getJoke(String query) {
+    public void getJoke(String query, Boolean hasSearchString) {
         MultithreadingManager.executorService.execute(new Runnable() {
             @Override
             public void run() {
                 HttpURLConnection urlConnection = null;
+                URL url;
                 try {
-                    URL url = new URL(jokeURL + query + "?type=single&safe-mode");
+                    if (hasSearchString) {
+                        url = new URL(jokeURL + query + "&safe-mode");
+                    } else {
+                        url = new URL(jokeURL + query + "?safe-mode");
+                    }
+
                     urlConnection = (HttpURLConnection) url.openConnection();
                     urlConnection.setRequestMethod("GET");
                     urlConnection.setRequestProperty("content-Type", "application/json");

@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="20dp">
 
     <CheckBox
         android:id="@+id/programming"
@@ -11,8 +12,7 @@
         android:text="@string/programming"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline3"
-        app:layout_constraintBottom_toTopOf="@id/pun"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <CheckBox
         android:id="@+id/pun"
@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/programming"
-        app:layout_constraintBottom_toTopOf="@id/christmas"/>
+/>
 
     <CheckBox
         android:id="@+id/christmas"
@@ -31,8 +31,7 @@
         android:text="@string/christmas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pun"
-        app:layout_constraintBottom_toTopOf="@id/spooky"/>
+        app:layout_constraintTop_toBottomOf="@id/pun" />
 
     <CheckBox
         android:id="@+id/spooky"
@@ -41,8 +40,7 @@
         android:text="@string/spooky"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/christmas"
-        app:layout_constraintBottom_toTopOf="@id/misc"/>
+        app:layout_constraintTop_toBottomOf="@id/christmas"/>
 
     <CheckBox
         android:id="@+id/misc"
@@ -51,30 +49,33 @@
         android:text="@string/miscellaneous"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spooky"
-        app:layout_constraintBottom_toBottomOf="@id/guideline4"/>
+        app:layout_constraintTop_toBottomOf="@id/spooky"/>
 
     <Button
         android:id="@+id/ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ok"
+        android:backgroundTint="@color/app_mustard"
+        android:textColor="@color/gray"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline4" />
+        app:layout_constraintTop_toBottomOf="@id/misc"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.2" />-->
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.6" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

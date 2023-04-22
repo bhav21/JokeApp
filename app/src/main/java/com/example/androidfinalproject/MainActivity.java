@@ -13,29 +13,41 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity implements CategoriesFragment.CategoriesFragmentCallBackInterface, NetworkingManager.NetworkingCallBackInterface, DatabaseManager.DatabaseCallBackInterface {
+public class MainActivity extends AppCompatActivity implements
+        CategoriesFragment.CategoriesFragmentCallBackInterface,
+        ContainingWordsFragment.ContainingWordsFragmentCallBackInterface,
+        NetworkingManager.NetworkingCallBackInterface,
+        DatabaseManager.DatabaseCallBackInterface {
 
     TextView tv_joke;
-    TextView tv_filterList;
+    TextView tv_filterCategories;
+    TextView tv_filterPhrase;
     Button btn_save;
     Button generateNewJoke;
     Button btn_category;
+    Button btn_word;
     NetworkingManager networkingManager;
     DatabaseManager databaseManager;
     Joke joke;
+    String selectedCategories;
+    String containingPhrase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tv_joke = findViewById(R.id.jokeText);
-        tv_filterList = findViewById(R.id.filterList);
+        tv_filterCategories = findViewById(R.id.filterCategories);
+        tv_filterPhrase = findViewById(R.id.filterPhrase);
         generateNewJoke = findViewById(R.id.generateNewJoke);
         btn_category = findViewById(R.id.byCategory);
+        btn_word = findViewById(R.id.byWord);
         btn_save = findViewById(R.id.save);
+        selectedCategories = "Any";
+        containingPhrase = "";
 
         networkingManager = ((MyApp)getApplication()).networkingManager;
         networkingManager.listener = this;
@@ -53,10 +65,24 @@ public class MainActivity extends AppCompatActivity implements CategoriesFragmen
             }
         });
 
+        btn_word.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ContainingWordsFragment fragment = new ContainingWordsFragment();
+                fragment.listener = MainActivity.this;
+                fragment.show(getSupportFragmentManager().beginTransaction(), ContainingWordsFragment.TAG);
+            }
+        });
+
         generateNewJoke.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                networkingManager.getJoke("Any");
+                if (containingPhrase == "") {
+                    networkingManager.getJoke(selectedCategories, false);
+                } else {
+                    networkingManager.getJoke(selectedCategories + "?contains=" + containingPhrase, true);
+                }
+
             }
         });
 
@@ -100,13 +126,24 @@ public class MainActivity extends AppCompatActivity implements CategoriesFragmen
 
 
     @Override
-    public void addCategoriesListener(ArrayList<String> categoryList) {
-
+    public void onStringSent(String str) {
+        selectedCategories = str;
+        tv_filterCategories.setText(String.format("%s%s", getString(R.string.selectedCategories), selectedCategories));
     }
 
     @Override
     public void NetworkManagerCompleteWithJsonString(String jsonString) {
         joke = JsonManager.fromJsonStringToJoke(jsonString);
+        if (Objects.equals(joke.category, "None")) {
+            tv_joke.setTextColor(getColor(R.color.red));
+            btn_save.setEnabled(false);
+
+        } else {
+            tv_joke.setTextColor(getColor(R.color.black));
+            btn_save.setEnabled(true);
+        }
+        containingPhrase = "";
+        tv_filterPhrase.setText(null);
         tv_joke.setText(joke.joke);
     }
 
@@ -118,5 +155,11 @@ public class MainActivity extends AppCompatActivity implements CategoriesFragmen
     @Override
     public void databaseManagerCompleteDeletingJoke() {
 
+    }
+
+    @Override
+    public void onPhraseSent(String str) {
+        containingPhrase = str;
+        tv_filterPhrase.setText(String.format("%s%s", getString(R.string.must_contain), containingPhrase));
     }
 }

@@ -1,5 +1,6 @@
 package com.example.androidfinalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +17,12 @@ import java.util.ArrayList;
 public class CategoriesFragment extends DialogFragment {
 
     interface CategoriesFragmentCallBackInterface {
-        void addCategoriesListener(ArrayList<String> categoryList);
+        void onStringSent(String str);
     }
 
     public static String TAG = "categoriesFragment";
     CategoriesFragmentCallBackInterface listener;
+    String categories;
 
     @Nullable
     @Override
@@ -33,10 +35,50 @@ public class CategoriesFragment extends DialogFragment {
         CheckBox chk_spooky = v.findViewById(R.id.spooky);
         CheckBox chk_misc = v.findViewById(R.id.misc);
         Button btn_ok = v.findViewById(R.id.ok);
+        categories = "";
+
+
 
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if (chk_programming.isChecked()) {
+                    if (categories != "") {
+                        categories += ",";
+                    }
+                    categories += "Programming";
+                }
+
+                if (chk_pun.isChecked()) {
+                    if (categories != "") {
+                        categories += ",";
+                    }
+                    categories += "Pun";
+                }
+
+                if (chk_christmas.isChecked()) {
+                    if (categories != "") {
+                        categories += ",";
+                    }
+                    categories += "Christmas";
+                }
+
+                if (chk_spooky.isChecked()) {
+                    if (categories != "") {
+                        categories += ",";
+                    }
+                    categories += "Spooky";
+                }
+
+                if (chk_misc.isChecked()) {
+                    if (categories != "") {
+                        categories += ",";
+                    }
+                    categories += "Miscellaneous";
+                }
+
+                listener.onStringSent(categories);
                 dismiss();
             }
         });

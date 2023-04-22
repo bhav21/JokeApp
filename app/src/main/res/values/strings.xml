@@ -16,4 +16,10 @@
     <string name="spooky">Spooky</string>
     <string name="miscellaneous">Miscellaneous</string>
     <string name="ok">OK</string>
+    <string name="joke_text">Joke Text</string>
+    <string name="joke_category">Joke Category</string>
+    <string name="selectedCategories">Categories: "</string>
+    <string name="ok_word">OK</string>
+    <string name="what_word_phrase_do_you_want_your_joke_to_contain">What word/phrase do you want your joke to contain?</string>
+    <string name="must_contain">Must contain: "</string>
 </resources>

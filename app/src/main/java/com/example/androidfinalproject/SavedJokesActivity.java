@@ -67,7 +67,15 @@ public class SavedJokesActivity extends AppCompatActivity
 
     @Override
     public void onJokeClicked(Joke selectedJoke) {
-
+//        Intent intent = new Intent(this,JokeFragment.);
+//        intent.putExtra("joke",selectedJoke);
+//        startActivity(intent);
+        JokeFragment jokeFragment = new JokeFragment();
+        Bundle args = new Bundle();
+        args.putString("joke_text", selectedJoke.joke);
+        args.putString("joke_category", selectedJoke.category);
+        jokeFragment.setArguments(args);
+        jokeFragment.show(getSupportFragmentManager().beginTransaction(), JokeFragment.TAG);
     }
 
     @Override
