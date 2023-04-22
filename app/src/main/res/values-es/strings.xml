@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string name="app_name">Proyecto final de Android</string>
+        <string name="joke_generator">GENERADOR DE BROMAS</string>
+        <string name="generate_new_joke">Generar nuevo chiste</string>
+        <string name="or_filter_by">FILTRADO POR</string>
+        <string name="category">Categoría</string>
+        <string name="word">Palabra</string>
+        <string name="generate_joke">Generar Broma</string>
+        <string name="favourites">Favoritos</string>
+        <string name="click_below_to_get_a_new_joke">(haga clic a continuación para obtener una nueva broma!)</string>
+        <string name="save">Ahorrar</string>
+        <string name="categories">Categorías: Cualquiera</string>
+        <string name="programming">Programación</string>
+        <string name="pun">Retruécano</string>
+        <string name="christmas">Navidad</string>
+        <string name="spooky">Spooky</string>
+        <string name="miscellaneous">Escalofriante</string>
+        <string name="ok">DE ACUERDO</string>
+        <string name="joke_text">Texto de broma</string>
+        <string name="joke_category">Categoría de broma</string>
+        <string name="selectedCategories">Categorías: </string>
+        <string name="ok_word">DE ACUERDO</string>
+        <string name="what_word_phrase_do_you_want_your_joke_to_contain">¿Qué palabra/frase quieres que contenga tu chiste?</string>
+        <string name="must_contain">Debe contener: </string>
+</resources>

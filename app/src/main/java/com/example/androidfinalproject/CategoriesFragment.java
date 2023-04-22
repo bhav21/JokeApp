@@ -78,6 +78,9 @@ public class CategoriesFragment extends DialogFragment {
                     categories += "Miscellaneous";
                 }
 
+                if (categories == "") {
+                    categories = "Any";
+                }
                 listener.onStringSent(categories);
                 dismiss();
             }

@@ -19,14 +19,14 @@ public class NetworkingManager {
 
     String jokeURL = "https://v2.jokeapi.dev/joke/";
 
-    public void getJoke(String query, Boolean hasSearchString) {
+    public void getJoke(String query, Boolean hasSearchString, Boolean diffLang) {
         MultithreadingManager.executorService.execute(new Runnable() {
             @Override
             public void run() {
                 HttpURLConnection urlConnection = null;
                 URL url;
                 try {
-                    if (hasSearchString) {
+                    if (hasSearchString || diffLang) {
                         url = new URL(jokeURL + query + "&safe-mode");
                     } else {
                         url = new URL(jokeURL + query + "?safe-mode");

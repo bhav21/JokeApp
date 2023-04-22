@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements
@@ -78,9 +79,17 @@ public class MainActivity extends AppCompatActivity implements
             @Override
             public void onClick(View view) {
                 if (containingPhrase == "") {
-                    networkingManager.getJoke(selectedCategories, false);
+                    if (Locale.getDefault().getLanguage() == "es") {
+                        networkingManager.getJoke(selectedCategories + "?lang=" + Locale.getDefault().getLanguage(), false, true);
+                    } else {
+                        networkingManager.getJoke(selectedCategories, false, false);
+                    }
                 } else {
-                    networkingManager.getJoke(selectedCategories + "?contains=" + containingPhrase, true);
+                    if (Locale.getDefault().getLanguage() == "es") {
+                        networkingManager.getJoke(selectedCategories + "?contains=" + containingPhrase + "&lang=" + Locale.getDefault().getLanguage(), true, true);
+                    } else {
+                        networkingManager.getJoke(selectedCategories + "?contains=" + containingPhrase, true, false);
+                    }
                 }
 
             }
