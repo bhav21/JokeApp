@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android Final Project</string>
+    <string name="app_name">FunnyBones</string>
     <string name="joke_generator">JOKE GENERATOR</string>
     <string name="generate_new_joke">Generate New Joke</string>
     <string name="or_filter_by">FILTER BY</string>
