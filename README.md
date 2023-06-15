@@ -1,15 +1,16 @@
 # JokeApp
 
-<img src="https://github.com/bhav21/joke-generator-android/assets/63790878/1cf4bbb6-3dc3-4c13-84da-843e4b8943c5" width="150">
-<img src="https://github.com/bhav21/joke-generator-android/assets/63790878/1ddc539d-1a60-4039-8401-a67fa7e0ec50" width="150">
-<img src="https://github.com/bhav21/joke-generator-android/assets/63790878/6d15b7a0-9eb2-419e-958f-002e3eca7f7d" width="150">
-<img src="https://github.com/bhav21/joke-generator-android/assets/63790878/0d6407d7-037c-4ac8-a629-c13b84dfa22a" width="150">
-<img src="https://github.com/bhav21/joke-generator-android/assets/63790878/a44fd938-91d5-4510-a8cf-3ad1a73272fc" width="150">
-<img src="https://github.com/bhav21/joke-generator-android/assets/63790878/fba7f09a-4284-425b-9885-0a49be546ade" width="150">
-
 This is a simple Joke Generator App that I built as my final project for my Android app development course at Seneca College.
 
-The app uses the [JokeAPI](https://v2.jokeapi.dev/) to generate random jokes, which can be filtered based on either certain categories or words that the joke must contain. Once generated, the user is able to locally save their favorite jokes.
+The app uses the [JokeAPI](https://v2.jokeapi.dev/) to generate random jokes, which can be filtered based on either certain categories or words that the joke must contain. Once generated, the user is able to locally save their favorite jokes.  
+
+<img src="https://github.com/bhav21/joke-generator-android/assets/63790878/1cf4bbb6-3dc3-4c13-84da-843e4b8943c5" width="200">
+<img src="https://github.com/bhav21/joke-generator-android/assets/63790878/1ddc539d-1a60-4039-8401-a67fa7e0ec50" width="200">
+<img src="https://github.com/bhav21/joke-generator-android/assets/63790878/6d15b7a0-9eb2-419e-958f-002e3eca7f7d" width="200">
+<img src="https://github.com/bhav21/joke-generator-android/assets/63790878/0d6407d7-037c-4ac8-a629-c13b84dfa22a" width="200">
+<img src="https://github.com/bhav21/joke-generator-android/assets/63790878/a44fd938-91d5-4510-a8cf-3ad1a73272fc" width="200">
+<img src="https://github.com/bhav21/joke-generator-android/assets/63790878/fba7f09a-4284-425b-9885-0a49be546ade" width="200">  
+
 
 ## Some key components of the app are:
 -	1 activity for the main joke generator
